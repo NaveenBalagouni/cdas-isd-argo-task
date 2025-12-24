@@ -9,8 +9,8 @@ spec:
     repoURL: 'https://github.com/NaveenBalagouni/cdas-isd-argo-task.git'
     targetRevision: main
     path: my-app
-    directory:
-      recurse: true                # <-- enables recursive sync
+    # directory:
+    #   recurse: true                # <-- enables recursive sync
     helm:
       valueFiles:
         - values-override.yaml
