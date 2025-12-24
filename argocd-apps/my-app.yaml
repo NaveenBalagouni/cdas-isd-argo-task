@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/my-org/my-argocd-apps.git'  # your Git repo
+    targetRevision: main
+    path: my-app
+    helm:
+      valueFiles:
+        - values-override.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: my-app-namespace
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
