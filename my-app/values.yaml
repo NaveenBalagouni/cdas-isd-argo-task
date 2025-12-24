@@ -13,7 +13,7 @@ ingress:
   enabled: false
   annotations: {}
   hosts:
-    - host: chart-example.local
+    - host: chart-example.cdaas.opsmx.org
       paths:
         - path: /
           pathType: ImplementationSpecific

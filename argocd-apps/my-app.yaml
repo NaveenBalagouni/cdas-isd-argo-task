@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/my-org/my-argocd-apps.git'  # your Git repo
+    repoURL: 'https://github.com/my-org/my-argocd-apps.git'
     targetRevision: main
     path: my-app
     helm:
