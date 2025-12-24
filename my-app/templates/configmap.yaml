@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-config
 data:
-  app-config: |
-    environment: {{ .Values.nodeSelector.environment | default "development" }}
-    replicaCount: {{ .Values.replicaCount }}
+  environment: {{ .Values.nodeSelector.environment | default "development" }}
+  replicaCount: "{{ .Values.replicaCount }}"
