@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/my-org/my-argocd-apps.git'
+    repoURL: 'https://github.com/NaveenBalagouni/cdas-isd-argo-task.git'
     targetRevision: main
     path: my-app
     helm:
@@ -14,7 +14,7 @@ spec:
         - values-override.yaml
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: my-app-namespace
+    namespace: sample-overide-app
   syncPolicy:
     automated:
       prune: true
