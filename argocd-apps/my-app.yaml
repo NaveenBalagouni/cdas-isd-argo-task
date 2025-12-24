@@ -8,12 +8,10 @@ spec:
   source:
     repoURL: 'https://github.com/NaveenBalagouni/cdas-isd-argo-task.git'
     targetRevision: main
-    path: my-app
-    # directory:
-    #   recurse: true                # <-- enables recursive sync
+    path: my-app              # Path to your Helm chart
     helm:
       valueFiles:
-        - values-override.yaml
+        - values-override.yaml  # Optional: overrides for ArgoCD deployment
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: sample-overide-app
@@ -21,3 +19,31 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+
+
+
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: my-app
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: 'https://github.com/NaveenBalagouni/cdas-isd-argo-task.git'
+#     targetRevision: main
+#     path: my-app
+#     # directory:
+#     #   recurse: true                # <-- enables recursive sync
+#     helm:
+#       valueFiles:
+#         - values-override.yaml
+#   destination:
+#     server: 'https://kubernetes.default.svc'
+#     namespace: sample-overide-app
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
